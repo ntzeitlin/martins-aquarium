@@ -1,10 +1,11 @@
 // File to handle the rendering of the fish list
 
-import { database } from "./aquariumData.js";
+import { getFishDatabase } from "./aquariumData.js";
 
 export const fishList = () => {
     // Generate an HTML representation of each fish
-    const fishDatabase = database.fish
+    const fishDatabase = getFishDatabase()
+    console.log(fishDatabase)
 
     let fishListHTML = ''
     for (const fishObject of fishDatabase) {
