@@ -58,9 +58,74 @@
             diet: "Detritivore",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/GambianMudskippers.jpg/220px-GambianMudskippers.jpg"
         }
+    ],
+    tips: [
+        {
+            topic: "Water Temperature",
+            text: "Maintain a consistent water temperature between 75-80°F (24-27°C) for most tropical fish."
+         },
+         {
+            topic: "Water Quality",
+            text: "Ensure the water is free from harmful chemicals by using a good filtration system and testing water parameters regularly."
+         },
+         {
+            topic: "Feeding Schedule",
+            text: "Feed fish in small amounts 1-2 times a day, and avoid overfeeding as it can lead to health problems and poor water quality."
+         },
+         {
+            topic: "Tank Cleaning",
+            text: "Clean the tank regularly by doing partial water changes, removing debris, and cleaning the glass to prevent algae buildup."
+         },
+         {
+            topic: "Lighting",
+            text: "Provide 8-12 hours of light daily to mimic natural conditions, but avoid excessive light to prevent algae growth."
+         }
+    ],
+    locations: [
+        {
+            name: "Great Barrier Reef",
+            country: "Australia",
+            description: "The Great Barrier Reef is the world's largest coral reef system, supporting a diverse array of marine life."
+         },
+         {
+            name: "Living Room Fishbowl",
+            country: "Home Aquarium",
+            description: "A small, often decorative aquarium in the home, providing a close-up view of fish and aquatic plants."
+         },
+         {
+            name: "Under the Sea",
+            country: "Ocean",
+            description: "A general term describing the marine environment beneath the ocean's surface, home to diverse marine ecosystems."
+         },
+         {
+            name: "Barrier Reefs",
+            country: "Various Coastal Regions",
+            description: "Natural underwater structures formed by coral growth, supporting numerous marine species and protecting coastlines."
+         },
+         {
+            name: "South America",
+            country: "Brazil, Peru, Colombia",
+            description: "South American rivers and lakes are home to a rich variety of freshwater fish, including popular aquarium species like tetras and discus."
+         },
+         {
+            name: "Hollywood, Yugoslavia",
+            country: "Fictional",
+            description: "A whimsical, imaginary place blending the glamor of Hollywood with the rustic charm of old Yugoslavia, featuring underwater scenes as if seen through a cinematic lens."
+         }
     ]
+
 }
 
+// use get function to maintain integrity of the database with copy instead of reference
+// this was used in book 3, Dynamite Duo, Defining Villains
 export const getFishDatabase = () => {
-    return database.fish.map(fishArray => ({...fishArray}))
+    return database.fish.map(fishObj => ({...fishObj}))
+};
+
+export const getTipsDatabase = () => {
+    return database.tips.map(tipObj => ({...tipObj}))
+};
+
+export const getLocationsDatabase = () => {
+    return database.locations.map(locationObj => ({...locationObj}))
 }

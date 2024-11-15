@@ -5,9 +5,8 @@ import { getFishDatabase } from "./aquariumData.js";
 export const fishList = () => {
     // Generate an HTML representation of each fish
     const fishDatabase = getFishDatabase()
-    console.log(fishDatabase)
 
-    let fishListHTML = ''
+    let fishListHTML = '<h1>Fish</h1>'
     for (const fishObject of fishDatabase) {
         fishListHTML += `
             <article class="fish">

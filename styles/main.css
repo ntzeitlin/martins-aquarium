@@ -1,7 +1,9 @@
-.fish {
+.fish,
+.locations {
     flex-basis: 300px;
     flex-grow: 1;
     max-width: 400px;
+    margin-left: 20px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -12,10 +14,22 @@
     transition: transform 0.3s ease;
 }
 
+.location {
+    padding: 20px;
+}
+
 .fish__image {
     max-width: 10rem;
 }
 
 .fish__details {
     padding: 20px;
+}
+
+
+.fish__name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
 }
