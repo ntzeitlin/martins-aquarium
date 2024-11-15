@@ -1,6 +1,6 @@
 // File to store the fish data
 
-export const database = {
+ const database = {
     fish: [
         {
             name: "Nemo",
@@ -8,7 +8,7 @@ export const database = {
             length: 3,
             location: "Great Barrier Reef",
             diet: "Omnivore",
-            image: "https://example.com/images/nemo.jpg"
+            image: "https://lumiere-a.akamaihd.net/v1/images/07ff8e314e2798d32bfc8c39f82a9601677de34c.jpeg?region=0%2C0%2C600%2C600"
         },
         {
             name: "Dory",
@@ -16,7 +16,7 @@ export const database = {
             length: 5,
             location: "Great Barrier Reef",
             diet: "Omnivore",
-            image: "https://example.com/images/dory.jpg"
+            image: "https://lumiere-a.akamaihd.net/v1/images/5b1aceba6bdd980653c0f64fb7ebc07cd28f8dd5.jpeg"
         },
         {
             name: "Bea Goldfishberg",
@@ -59,4 +59,8 @@ export const database = {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/GambianMudskippers.jpg/220px-GambianMudskippers.jpg"
         }
     ]
+}
+
+export const getFishDatabase = () => {
+    return database.fish.map(fishArray => ({...fishArray}))
 }
