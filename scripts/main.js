@@ -13,8 +13,6 @@ const tipHTML = tipList()
 // Generate the location list
 const locationHTML = locationList()
 
-
-
 // Render each HTML string to the correct DOM element
 // TODO: move this section to a render module
 const fishListElement = document.getElementById("fishList")
