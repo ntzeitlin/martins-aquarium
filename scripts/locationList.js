@@ -5,7 +5,7 @@ import { getLocationsDatabase } from "./aquariumData.js";
 export const locationList = () => {
     const locationDatabase = getLocationsDatabase()
 
-    let locationListHTML = '<h1>Locations</h1>'
+    let locationListHTML = ''
     for (const location of locationDatabase) {
         locationListHTML += `
             <article class="locations">
