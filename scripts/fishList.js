@@ -2,12 +2,10 @@
 
 import { getFishDatabase } from "./aquariumData.js";
 
-export const fishList = () => {
+export const constructFishList = (fishListArray) => {
     // Generate an HTML representation of each fish
-    const fishDatabase = getFishDatabase()
-
     let fishListHTML = ''
-    for (const fishObject of fishDatabase) {
+    for (const fishObject of fishListArray) {
         fishListHTML += `
             <article class="fish">
                 <img src="${fishObject.image}" alt="${fishObject.name} Image" class="fish__image">
@@ -25,63 +23,36 @@ export const fishList = () => {
 
 export const mostHolyFish = () => {
     const fishDatabase = getFishDatabase()
-    let holyFish = ""
+    let holyFish = []
     for (const fishObject of fishDatabase) {
         if (fishObject.length % 5 === 0) {
-            holyFish += `
-            <article class="fish">
-                <img src="${fishObject.image}" alt="${fishObject.name} Image" class="fish__image">
-                <div class="fish__details">
-                    <h2 class="fish__name">${fishObject.name}</h2>
-                    <h3 class="fish__species">${fishObject.species}</h3>
-                    <p class="fish__description">Located in the ${fishObject.location}, 
-                    this fish is a(n) ${fishObject.diet} and has a length of ${fishObject.length} inches.</p>
-                </div>
-            </article>
-        `
+            holyFish.push(fishObject)
         }
     }
+    holyFish = constructFishList(holyFish)
     return holyFish
 }
 
 export const soldierFish = () => {
     const fishDatabase = getFishDatabase()
-    let soldierFish = ''
+    let soldierFish = []
     for (const fishObject of fishDatabase) {
         if (fishObject.length % 3 === 0 && fishObject.length % 5 != 0) {
-            soldierFish += `
-            <article class="fish">
-                <img src="${fishObject.image}" alt="${fishObject.name} Image" class="fish__image">
-                <div class="fish__details">
-                    <h2 class="fish__name">${fishObject.name}</h2>
-                    <h3 class="fish__species">${fishObject.species}</h3>
-                    <p class="fish__description">Located in the ${fishObject.location}, 
-                    this fish is a(n) ${fishObject.diet} and has a length of ${fishObject.length} inches.</p>
-                </div>
-            </article>
-        `
+            soldierFish.push(fishObject)
         }
     }
+    soldierFish = constructFishList(soldierFish)
     return soldierFish
 }
 
 export const regularFish = () => {
     const fishDatabase = getFishDatabase()
-    let regularFish = ''
+    let regularFish = []
     for (const fishObject of fishDatabase) {
         if (fishObject.length % 3 != 0 && fishObject.length % 5 != 0) {
-            regularFish += `
-            <article class="fish">
-                <img src="${fishObject.image}" alt="${fishObject.name} Image" class="fish__image">
-                <div class="fish__details">
-                    <h2 class="fish__name">${fishObject.name}</h2>
-                    <h3 class="fish__species">${fishObject.species}</h3>
-                    <p class="fish__description">Located in the ${fishObject.location}, 
-                    this fish is a(n) ${fishObject.diet} and has a length of ${fishObject.length} inches.</p>
-                </div>
-            </article>
-        `
+            regularFish.push(fishObject)
         }
     }
+    regularFish = constructFishList(regularFish)
     return regularFish
 }
